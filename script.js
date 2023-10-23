@@ -1,10 +1,11 @@
-let score = {
+
+let score = JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
     losses: 0,
     ties: 0
 };
 
-score = JSON.parse(localStorage.getItem('score'));
+updateScore()
 
 let computerMove= '';
 
@@ -56,12 +57,31 @@ function game(myClick){
 
     //to store the score in the local storage.
     localStorage.setItem('score', JSON.stringify(score));
- 
-    alert('You picked '+ myClick + '. Computer picked '+computerMove+'. '+ result + '\n'+ 'Wins: ' + score.wins + ', Losses: ' + score.losses + ', Ties: ' + score.ties );
+
+
+   updateScore();
+
+   document.querySelector('.result').innerHTML= result;
+   document.querySelector('.moves').innerHTML= `You: ${myClick}, Computer: ${computerMove}`;
+
+
+}
+
+
+function updateScore(){
+    document.querySelector('.score').innerHTML= `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
 function reset(){
     score.wins=0;
     score.losses=0;
     score.ties=0;
+    localStorage.removeItem('score');
+    updateScore();
+    document.querySelector('.result').innerHTML= '';
+    document.querySelector('.moves').innerHTML= '';
 }
+
+
+
+
