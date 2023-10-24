@@ -7,16 +7,33 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <button onclick= "game('Rock')">Rock</button>
-    <button onclick= "game('Paper')">Paper</button>
-    <button onclick= "game('Scissors')">Scissors</button>
+    <main>
+        <div class="container">
+            <h1>Rock Paper Scissors</h1>
+            <div>
+                <button onclick= "game('Rock')" class="move-button">
+                    <img src="./images/rock.png" class="hand-img" calt="rock">
+                </button>
+                <button onclick= "game('Paper')" class="move-button">
+                    <img src="./images/paper.png" class="hand-img" alt="paper">
+                </button>
+                <button onclick= "game('Scissors')" class="move-button">
+                    <img src="./images/scissors.png" class="hand-img" alt="scissors">
+                </button>
+            </div>
+            
+        
+            <p class="moves moves-style"></p>
+            <p class="result"></p>
+            <p class="score"></p>
+        </div>
+        <div class="reset-btn">
+            <button onclick= "reset()" class="btn-reset">Reset Score</button>
+        </div>
+    </main>
+    
 
-    <p class="result"></p>
-    <p class="moves"></p>
-    <p class="score"></p>
 
-    <button onclick= "reset()">Reset Score</button>
 
     <script src="./script.js"></script>
 </body>

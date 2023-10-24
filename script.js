@@ -62,7 +62,7 @@ function game(myClick){
    updateScore();
 
    document.querySelector('.result').innerHTML= result;
-   document.querySelector('.moves').innerHTML= `You: ${myClick}, Computer: ${computerMove}`;
+   document.querySelector('.moves').innerHTML= `You: <img src="./images/${myClick}.png" class="result-hand-img" alt="paper"> Computer: <img src="./images/${computerMove}.png" class="result-hand-img" alt="paper">`;
 
 
 }
