@@ -47,6 +47,7 @@ function game(myClick){
 
     if(result==='You Win.'){
         score.wins +=1;
+        result = 'You Win🎉';
     }
     else if (result==='You lose.'){
         score.losses +=1;
@@ -62,7 +63,7 @@ function game(myClick){
    updateScore();
 
    document.querySelector('.result').innerHTML= result;
-   document.querySelector('.moves').innerHTML= `You: <img src="./images/${myClick}.png" class="result-hand-img"> Computer: <img src="./images/${computerMove}.png" class="result-hand-img">`;
+    document.querySelector('.moves').innerHTML= `You: <img src="./images/${myClick}.png" class="result-hand-img">`+ `Computer: <img src="./images/${computerMove}.png" class="result-hand-img">`;
 
 
 }
